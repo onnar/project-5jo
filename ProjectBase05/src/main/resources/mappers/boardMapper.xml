@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 실제 sql질의문을 갖고있는 xml -->	<!-- persistance아닌가 -->
+<mapper namespace="kr.mycom.ojo.BoardMapper"> <!-- 여러개 이름의 getTime을 식별하기 위해 namespace가 필요한 거임 -->
+	<select id="getTime" resultType = "string">
+	select now()
+	</select>
+								<!-- 리턴타입 패키지까지 다 써줘야함  BoardVo형태로 리턴하니까 -->
+	<select id="read" resultType = "kr.mycom.ojo.model.BoardVo">
+	select 
+		gcode,ucode,rcode,cnt,cate,regdate,content,title
+	from 
+		group_info
+	where 
+		gcode = #{gcode}; 
+		<!-- 인수로 전달 받은 bno ${bno}는 Statement #{bno}는 PreparedStatement-->
+	</select>
+	<insert id="insert">
+		insert into group_info (ucode,rcode,cnt,cate,regdate,content,title)
+		values(#{ucode},#{rcode}, #{cnt}, #{cate}, #{regdate}, #{content}, #{title})
+	</insert>
+	
+	<!-- 
+	<![CDATA[
+	select from where 
+	]]>        문자로 취급 
+	-->													<!-- 알아서 List<BoardVo>로 받음 -->
+	<select id="listAll" resultType = "kr.mycom.ojo.model.BoardVo">
+		 <![CDATA[
+		select 
+			gcode,ucode,rcode,cnt,cate,regdate,content,title
+		from 
+			group_info
+		where gcode > 0 
+		 order by gcode desc, regdate desc
+		 ]]>
+	</select>
+</mapper>
+
+
