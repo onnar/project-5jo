@@ -1,8 +1,6 @@
 
 ProjectBase01  가장 기본 프로젝트 셋팅
-ㅣ
-ㅣ
-ㅣ
+\
 ProjectBase02 myboard 데이터 가져옴
     []SampleController에  read인 doA 메서드 추가
     BoardDaoImpl에  read 메서드 추가
