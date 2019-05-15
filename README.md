@@ -1,14 +1,12 @@
 
 ProjectBase01  가장 기본 프로젝트 셋팅
-\
+for(int i =0; i<4; i++){\n}
 ProjectBase02 myboard 데이터 가져옴
     []SampleController에  read인 doA 메서드 추가
     BoardDaoImpl에  read 메서드 추가
     boardMapper.xml의 <select> 추가
     doA.jsp 추가
-ㅣ
-ㅣ
-ㅣ
+for(int i =0; i<4; i++){\n}
 ProjectBase03 
 글등록o 한글처리 아직 x
     SampleController에  registPost메소드 (등록)추가
