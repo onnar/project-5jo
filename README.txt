@@ -44,4 +44,18 @@ boardRemove?gcode=12
     BoardDaoImpl에  delete 메서드 추가
     boardMapper.xml의 <delete> id=delete추가
     boardRemove.jsp 추가
+* * *
+ProjectBase08
+    kr.mycom.ojo.service 패키지 추가
+    BoardService 인터페이스 추가
+    BoardServiceImpl 클래스 crud 업데이트
+  SampleController에 dao를 serivce로 바꿔줌 (일단 한번더 거치게만 한거임)
+
+ProjectBase09
+	 보류 재정렬
+
+ProjectBase10
+	boardListView 에 boardView로 상세페이지 가기 + 글등록(boardRegi)
+	boardView(상세보기)에서 boardModi(수정하기), boardRemove(삭제하기)
+	home(메인) boardListView 로 글등록가기
 
