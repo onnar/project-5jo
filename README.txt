@@ -39,3 +39,9 @@ gcode로 불러오는거 boardView?gcode=13 이런식으로 boardModi?gcode=13
     boardModi.jsp 추가
 * * *
 ProjectBase07
+boardRemove?gcode=12
+    SampleController에  removegGET 메서드 추가
+    BoardDaoImpl에  delete 메서드 추가
+    boardMapper.xml의 <delete> id=delete추가
+    boardRemove.jsp 추가
+
