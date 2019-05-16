@@ -58,4 +58,6 @@ ProjectBase10
 	boardListView 에 boardView로 상세페이지 가기 + 글등록(boardRegi)
 	boardView(상세보기)에서 boardModi(수정하기), boardRemove(삭제하기)
 	home(메인) boardListView 로 글등록가기
-
+	boardModi.jsp 등록일자 제거
+	boardRegi.jsp 등록일자 제거
+	boardRegi.jsp   board bd set.parameter 제거~(스프링이 알아서 해줘)
