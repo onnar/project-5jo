@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.mycom.ojo.MemberMapper">
+	<insert id="regist">
+		insert into
+			members(uid,pwd,name,phone,gender,profile,email)
+		values
+			(#{uid},#{pwd},#{name},#{phone},#{gender},#{profile},#{email})
+	</insert>
+
+	<select id="login" resultType="kr.mycom.ojo.model.MemberVo">
+		select
+			uid, pwd, name, phone, gender, profile,email
+		from
+			members
+		where
+			uid = #{uid} and pwd = #{pwd}
+	</select>
+
+	<update id="update">
+		update members
+		set
+			pwd= #{pwd}, name= #{name}, phone = #{phone}, gender= #{gender},
+			profile = #{profile},email = #{email}
+		where
+			uid = #{uid}
+	</update>
+
+	<delete id="withdrawal">
+		delete from members
+		where
+			uid=#{uid} and pwd=#{pwd}
+	</delete>
+
+</mapper>

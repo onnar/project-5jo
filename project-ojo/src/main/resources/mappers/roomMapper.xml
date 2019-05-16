@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.mycom.ojo.RoomMapper">
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 'addr'.toString()">
+				and addr like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'name'.toString()">
+				and name like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'rcode'.toString()">
+				and rcode = #{keyword}
+			</if>
+		</if>
+	</sql>
+	
+	<select id="listAll" resultType="kr.mycom.ojo.model.Room_infoVo">
+		 <![CDATA[
+		select rcode,name,addr,phone,rtype,rprofile,thumb,thdetail01,thdetail02,thdetail03,thdetail04,prc from room_info order by rcode;
+		 ]]>
+	</select>
+
+	<select id="listSearch" resultType="kr.mycom.ojo.model.Room_infoVo"><!-- 게시판 특정 수 만큼 셀렉트 -->
+		<![CDATA[  
+		  select * 
+		  from room_info 
+		  where rcode > 0 
+		  ]]>
+				<include refid="search"></include>
+		  <![CDATA[  
+		   order by rcode desc
+		  limit #{pageStart}, #{perPageNum}
+		]]>
+	</select>
+	<select id="listSearchCount" resultType="int"><!-- 게시판 전체 글수 -->
+		<![CDATA[  
+		  select count(rcode) 
+		  from room_info
+		  where rcode > 0 
+		]]>
+		<include refid="search"></include>
+	</select>
+</mapper>

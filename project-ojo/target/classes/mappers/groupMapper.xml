@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.mycom.ojo.GroupMapper">
+	<select id="getTime" resultType="string">
+		select now()
+	</select>
+	
+	<select id="read" resultType="kr.mycom.ojo.model.GroupVo">
+		select 
+			gcode,ucode,rcode,cnt,cate,regdate,content,title
+		from 
+			group_info
+		where 
+			gcode = #{gcode}; 
+	</select>
+	
+	<insert id="insert">
+		insert into group_info (ucode,rcode,cnt,cate,regdate,content,title)
+		values(#{ucode},#{rcode}, #{cnt}, #{cate}, #{regdate}, #{content}, #{title})
+	</insert>	
+
+	<select id="listAll" resultType="kr.mycom.ojo.model.GroupVo">
+		 <![CDATA[
+		select 
+			gcode,ucode,rcode,cnt,cate,regdate,content,title
+		from 
+			group_info
+		where gcode > 0 
+		 order by gcode desc, regdate desc
+		 ]]>
+	</select>
+
+	<update id="update">
+		update group_info set cnt =#{cnt}, cate =#{cate}, regdate =#{regdate}, content =#{content}, title =#{title}
+		where gcode = #{gcode}
+	</update>
+	
+	<delete id="delete">
+		delete from group_info where gcode = #{gcode}
+	</delete>	
+</mapper>
+
+
