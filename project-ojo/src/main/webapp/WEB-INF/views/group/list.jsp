@@ -16,7 +16,7 @@
 		<!-- page:s -->
 		<h1 class="pb-3">스터디 그룹 모집</h1>
 		<div class="table-responsive">
-			<table class="table table-striped table-sm">
+			<table class="table table-hover">
 				<caption style="display:none;">그룹 모집 게시물 리스트</caption>
 				<colgroup>
 					<col style="width:;">
@@ -28,7 +28,7 @@
 					<col style="width:;">
 					<col style="width:;">
 				</colgroup>
-				<thead>
+				<thead class="thead-dark">
 					<tr>
 						<th scope="col">번호</th>
 						<th scope="col">방번호</th>
@@ -51,13 +51,6 @@
 						<td>${hi2.ucode}</td>
 						<td>${hi2.regdate}</td>
 					</tr>
-					<!-- 
-					<tr style="display:none;" class="row-content">
-						<td colspan="8" class="text-left">
-							내용 : ${hi2.content}
-						</td>
-					</tr>
-					 -->
 					</c:forEach>
 					</c:if>
 					<c:if test="${empty hi}">
@@ -70,7 +63,9 @@
 				</tbody>
 			</table>
 		</div>
-
+		<div class="btn-group-lg text-right">
+			<a href="${pageContext.request.contextPath}/group/register" class="btn btn-outline-dark">글쓰기</a>
+		</div>
 		<!-- //page:e -->
 	</div>
 	<!-- //#content:e -->
@@ -79,17 +74,11 @@
 <jsp:include page="/include/footer.jsp"/>
 <jsp:include page="/include/lib_footer.jsp"/>
 <script>
-$(function(){
-	/*
-	$('table .row-subject').each(function(e){
-		$(this).find('td').on('click',function(){
-			var gcode = $(this).siblings('td:eq(0)').text();
-			//location.href='${pageContext.request.contextPath}/group/view?gcode=' + gcode;
-			$(this).closest('.row-subject').next('.row-content').slideToggle();
-			console.log('a');
-		});
+$(document).ready(function(){
+	var rowsCnt = $('table tbody tr').length;
+	$('table tbody tr').each(function(idx){
+		$(this).find('td:first-child').text((rowsCnt-idx));
 	});
-	*/
 });
 </script>
 </body>

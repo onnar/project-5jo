@@ -9,7 +9,36 @@ body {font-family:'맑은고딕', sans-serif;}
 #topNav {max-width:1140px; margin:0 auto; transition:all 600ms;}
 #topNav.fixed-top.navbar-fixed {max-width:100% !important; color:#fff; background-color:rgba(255,255,255,0.8);}
 
+@media screen and (min-width:1200px) {
+	#contentWrap {
+		overflow:hidden;
+		background:#ececec;
+		border:1px solid #e3e3e3;
+		border-width:1px 0;
+	}
+	
+	#content {
+		min-height:600px !important;
+		padding:30px;
+		margin:20px auto !important;
+		background:#fff;
+		box-shadow:0 0 0.35rem rgba(0,0,0,0.1);
+	}
+	
+	body.default #contentWrap {
+		background:#fff;
+		border-width:0 0 1px;
+	}
+	
+	body.default #content {
+		min-height:600px !important;
+		box-shadow:none !important;
+		margin:0 auto;
+	}
+}
+
 /* header */
+.navbar .info-member {font-size:13px;}
 
 /* main */
 .page-main ul {display:flex; display:-webkit-flex; flex-wrap:wrap;}
@@ -19,3 +48,17 @@ body {font-family:'맑은고딕', sans-serif;}
 #page-login {max-width:800px; margin:0 auto;}
 #page-login .form-control {height:60px;}
 #page-login.is-login-fail .form-control {border-color:red !important;}
+
+/* member register */
+#page-member-reg {max-width:800px; margin:0 auto;}
+#page-member-reg #pwd-msg.not {color:red;}
+#page-member-reg #pwd-msg.pass {color:green;}
+
+/* romm list */
+#page-room-list .roomList .item .thumb {overflow:hidden; position:relative; min-height:100px;}
+#page-room-list .roomList .item .thumb .type-label {position:absolute; right:0; top:0; z-index:5; padding:8px 10px; line-height:1;}
+#page-room-list .roomList .item .thumb img {width:100%; height:auto; transition:all 0.8s;}
+#page-room-list .roomList .item .shadow-sm {transition:all 0.4s !important;}
+#page-room-list .roomList .item:hover .shadow-sm {box-shadow:0 .3rem .5rem rgba(100, 100, 100, 0.4) !important;}
+#page-room-list .roomList .item:hover .thumb img {transform:scale(1.3);}
+#page-room-list .pagination .page-link.selected {background:#000 !important; color:#fff !important;}

@@ -7,7 +7,7 @@
 <jsp:include page="/include/lib_header.jsp"/>
 <title>Main index</title>
 </head>
-<body id="page-top" class="bg-white">
+<body id="page-top" class="bg-white default">
 <jsp:include page="/include/topNav.jsp"/>
 <!-- header:s -->
 <header class="masthead" style="background-image:url('resources/img/home-bg.jpg')">
@@ -27,39 +27,68 @@
 <!-- #contentWrap:s -->
 <div id="contentWrap">
 	<!-- #content:s -->
-	<div id="content" class="container">
+	<div id="content" class="container nodesign">
 		<!-- page:s -->
-		<div class="page-main page-inner">
-			<h1>메인 페이지</h1>
-
+		<div id="page-main">
+			<h1 class="pb-3">메인 페이지</h1>
+			
 			<div class="row mb-2">
 				<div class="col-md-6">
 				<div class="card flex-md-row mb-4 shadow-sm h-md-250">
 					<div class="card-body d-flex flex-column align-items-start">
-						<strong class="d-inline-block mb-2 text-primary">World</strong>
+						<strong class="d-inline-block mb-2 text-primary">Study room</strong>
 						<h3 class="mb-0">
-							<a class="text-dark" href="#">Featured post</a>
+							<a class="text-dark" href="#">내용 입력</a>
 						</h3>
-					<div class="mb-1 text-muted">Nov 12</div>
-						<p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-						<a href="#">Continue reading</a>
+						<div class="mb-1 text-muted">내용 추후 입력</div>
+							<p class="card-text mb-auto">내용을 입력해 주세요!</p>
+							<a href="#">Continue reading</a>
+						</div>
 					</div>
-				</div>
 				</div>
 				<div class="col-md-6">
 				<div class="card flex-md-row mb-4 shadow-sm h-md-250">
 					<div class="card-body d-flex flex-column align-items-start">
 						<strong class="d-inline-block mb-2 text-success">Design</strong>
 						<h3 class="mb-0">
-							<a class="text-dark" href="#">Post title</a>
+							<a class="text-dark" href="#">내용 입력</a>
 						</h3>
-					<div class="mb-1 text-muted">Nov 11</div>
-						<p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-						<a href="#">Continue reading</a>
+						<div class="mb-1 text-muted">내용 추후 입력</div>
+							<p class="card-text mb-auto">내용을 입력해 주세요!</p>
+							<a href="#">Continue reading</a>
+						</div>
 					</div>
 				</div>
-				</div>
 			</div>
+
+			<div class="row mb-2">
+				<div class="col-md-6">
+				<div class="card flex-md-row mb-4 shadow-sm h-md-250">
+					<div class="card-body d-flex flex-column align-items-start">
+						<strong class="d-inline-block mb-2 text-primary">Study room</strong>
+						<h3 class="mb-0">
+							<a class="text-dark" href="#">내용 입력</a>
+						</h3>
+						<div class="mb-1 text-muted">내용 추후 입력</div>
+							<p class="card-text mb-auto">내용을 입력해 주세요!</p>
+							<a href="#">Continue reading</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+				<div class="card flex-md-row mb-4 shadow-sm h-md-250">
+					<div class="card-body d-flex flex-column align-items-start">
+						<strong class="d-inline-block mb-2 text-success">Design</strong>
+						<h3 class="mb-0">
+							<a class="text-dark" href="#">내용 입력</a>
+						</h3>
+						<div class="mb-1 text-muted">내용 추후 입력</div>
+							<p class="card-text mb-auto">내용을 입력해 주세요!</p>
+							<a href="#">Continue reading</a>
+						</div>
+					</div>
+				</div>
+			</div>			
 
 		</div>
 		<!-- //page:e -->

@@ -19,16 +19,16 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		<!-- 			
 		<property name="url"
 			value="jdbc:log4jdbc:mysql://127.0.0.1:3306/ojo?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="manager"></property>
-		<!-- 	
+		-->
 		<property name="url"
 			value="jdbc:log4jdbc:mysql://mydbpro.ctwfi6j3zvhq.us-east-2.rds.amazonaws.com:3306/ojo?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="suhan3580"></property>
-		-->
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

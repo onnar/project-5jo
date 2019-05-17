@@ -8,12 +8,17 @@
 		  Menu <i class="fas fa-bars"></i>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<c:if test="${member != null}">
+			<span class="info-member ml-3">
+				<i class="fas fa-user-friends"></i> ${member.name}(${member.uid})
+			</span>
+			</c:if>
 			<ul class="navbar-nav ml-auto">
 			  	<li class="nav-item">
 			  		<a class="nav-link" href="${pageContext.request.contextPath}"><i class="fas fa-home"></i> Home</a>
 			  	</li>
 				<li class="nav-item">
-					<a class="nav-link" href="room/list"><i class="fas fa-door-open"></i> STUDY ROOM</a>
+					<a class="nav-link" href="${pageContext.request.contextPath}/room/list"><i class="fas fa-door-open"></i> STUDY ROOM</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -27,10 +32,10 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">MEMBER</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown02">
+						<a class="dropdown-item" href="${pageContext.request.contextPath}/mypage/main">마이페이지</a>
 						<c:if test="${member != null}">
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/member/modify">정보수정</a>
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
-							<a class="dropdown-item" href="/">마이페이지</a>
 						</c:if>
 						<c:if test="${member == null}">
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/member/login">로그인</a>

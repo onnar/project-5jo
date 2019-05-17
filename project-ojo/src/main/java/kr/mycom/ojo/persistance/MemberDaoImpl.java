@@ -17,7 +17,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public void regist(MemberVo vo) throws Exception {
-		sql.insert(namespace + ".join", vo);
+		sql.insert(namespace + ".regist", vo);
 	}
 
 	@Override

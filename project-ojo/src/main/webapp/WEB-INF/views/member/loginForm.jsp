@@ -16,22 +16,29 @@
 		<!-- page:s -->
 		<div id="page-login" class="page-inner pt-5 pb-5 <c:if test="${msg eq false}">is-login-fail</c:if>">
 			<form method="post" class="form-signin">
-				<h1 class="h3 mb-3 font-weight-normal">LOGIN <c:if test="${msg eq false}"><span class="text-danger">Fail...</span></c:if></h1>
-				<div class="form-row mb-2">
+				<h1 class="mb-3 font-weight-normal">LOGIN</h1>
+				<c:if test="${msg eq false}">
+				<div class="alert alert-danger mt-1 mb-3">로그인 실패!<br>아이디와 비밀번호를 확인해 주세요!</div>
+				</c:if>
+				<div class="mb-2">
 					<label for="inputEmail" class="sr-only">아이디</label>
 					<input type="text" id="inputUid" name="uid" class="form-control" placeholder="아이디" required autocomplete="off">
 				</div>
-				<div class="form-row">
+				<div class="">
 					<label for="inputPwd" class="sr-only">비밀번호</label>
 					<input type="password" id="inputPwd" name="pwd" class="form-control" placeholder="비밀번호" required autocomplete="off">
 				</div>
-				<div class="checkbox mb-3">
+				<div class="checkbox mb-3 mt-3">
 					<label>
 						<input type="checkbox" value="remember-me">
-						Remember me
+						아이디 저장
 					</label>
 				</div>
 				<button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
+				<div class="btn-group-lg mt-3 border-top pt-3">
+					<span>아직 회원이 아니신가요?</span>
+					<a href="${pageContext.request.contextPath}/member/register" class="btn btn-dark ml-3">회원가입</a>
+				</div>
 			</form>
 		</div>
 		<!-- //page:e -->

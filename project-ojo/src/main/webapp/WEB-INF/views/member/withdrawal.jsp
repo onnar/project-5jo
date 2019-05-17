@@ -14,9 +14,10 @@
 	<!-- #content:s -->
 	<div id="content" class="container">
 		<!-- page:s -->
-		<div class="text-center">
-			<h1>${sessionScope.member.uid} 님의 마이페이지 입니다..</h1>
-			페이지는 준비중입니다...
+		<div class="pt-5 text-center">
+			<h1 class="pt-5">탈퇴처리가 완료되었습니다</h1>
+			<p>다시 이용을 원하시면 '회원가입'을 해주세요</p>
+			<a href="${pageContext.request.contextPath}/member/register" class="btn btn-primary">회원가입</a>
 		</div>
 		<!-- //page:e -->
 	</div>

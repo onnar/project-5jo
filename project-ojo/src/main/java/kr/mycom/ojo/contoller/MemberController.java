@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -15,7 +16,7 @@ import kr.mycom.ojo.model.MemberVo;
 import kr.mycom.ojo.service.MemberService;
 
 @Controller
-@RequestMapping("member/*")
+@RequestMapping("/member/*")
 public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(GroupController.class);
 	
@@ -23,14 +24,26 @@ public class MemberController {
 	MemberService service;
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public void register() {
+	public String registerGET() {
+		logger.info("regist get ...........");
+		return "member/registerForm";
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String register(MemberVo vo) throws Exception {
+	public String registerPOST(MemberVo vo) throws Exception {
+		logger.info("regist post ...........");
+		logger.info(vo.toString());
 		service.regist(vo);
 
-		return "member/success";
+		return "redirect:/member/success";
+	}
+	
+	@RequestMapping(value = "/success", method = RequestMethod.GET)
+	public String success(MemberVo vo) throws Exception {
+		logger.info("success get ...........");
+		logger.info(vo.toString());
+
+		return "/member/success";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -67,8 +80,10 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
-	public void modifyGET() throws Exception {
+	public String modifyGET() throws Exception {
 		logger.info("modify get ...........");
+		
+		return "member/modifyForm";
 	}
 
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
@@ -87,6 +102,7 @@ public class MemberController {
 		session.removeAttribute("member");
 		service.withdrawal(vo);
 
-		return "withdrawal";
+		return "member/withdrawal";
 	}
+	
 }

@@ -12,7 +12,7 @@ public class PageMaker {
 	private boolean prev;
 	private boolean next;
 	
-	private int displayPageNum = 3;
+	private int displayPageNum = 2;
 	
 	private Criteria cri;
 
