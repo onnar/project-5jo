@@ -30,7 +30,7 @@
 				</colgroup>
 				<thead class="thead-dark">
 					<tr>
-						<th scope="col">번호</th>
+						<th scope="col">순서</th>
 						<th scope="col">방번호</th>
 						<th scope="col">카테고리</th>
 						<th scope="col">제목</th>

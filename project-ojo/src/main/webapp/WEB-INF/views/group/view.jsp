@@ -36,12 +36,6 @@
 					<th scope="row">회원 번호</th>
 					<td>${hi.ucode}</td>
 				</tr>
-				<!-- 
-				<tr>
-					<th scope="row">룸 번호</th>
-					<td>${hi.rcode}</td>
-				</tr>
-				-->
 				<tr>
 					<th scope="row">카테고리</th>
 					<td>${hi.cate}</td>

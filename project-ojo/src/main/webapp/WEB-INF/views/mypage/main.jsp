@@ -13,7 +13,6 @@
 <div id="contentWrap">
 	<!-- #content:s -->
 	<div id="content" class="container">
-
 		<!-- page:s -->
 		<c:if test="${!empty sessionScope.member}">
 		<h1 class="">마이페이지</h1>

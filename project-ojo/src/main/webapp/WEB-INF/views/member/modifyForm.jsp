@@ -35,13 +35,13 @@
 					</div>
 					<div class="col-md-6 mb-3">
 						<label for="pwd1">비밀번호 확인</label>
-						<input type="text" name="pwd2" id="pwd2" value="${member.pwd}" class="form-control" placeholder="" autocomplete="off">
+						<input type="password" name="pwd2" id="pwd2" value="${member.pwd}" class="form-control" placeholder="" autocomplete="off">
 					</div>
 				</div>
 				
 				<div class="mb-3">
 					<label for="email">이메일 <span class="text-muted">(@ 포함하여 적어주세요)</span></label>
-					<input type="email" class="form-control" id="email" value="${member.email}" placeholder="ex)you@example.com" autocomplete="off">
+					<input type="email" name="email" class="form-control" id="email" value="${member.email}" placeholder="ex)you@example.com" autocomplete="off">
 				</div>
 							
 				<div class="row">
@@ -68,7 +68,8 @@
 				<div class="mb-3">
 					<label for="uid">프로필 이미지</label>
 					<div>
-						<input type="file" name="profile" value="${member.profile}" class="form-control" placeholder="프로필 이미지 등록">
+						<input type="hidden" name="profile" value="${member.profile}">
+						<input type="file" name="" value="" class="form-control" placeholder="프로필 이미지 등록">
 					</div>
 				</div>
 

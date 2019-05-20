@@ -54,11 +54,11 @@ public class GroupController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String registPOST(GroupVo board, RedirectAttributes rttr) throws Exception {
+	public String registPOST(GroupVo vo, RedirectAttributes rttr) throws Exception {
 		logger.info("regist post ...........");
-		logger.info(board.toString());
+		logger.info(vo.toString());
 
-		service.regist(board);
+		service.regist(vo);
 		return "redirect:/group/list";
 	}
 

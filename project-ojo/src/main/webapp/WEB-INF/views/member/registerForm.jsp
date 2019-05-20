@@ -44,7 +44,7 @@
 
 				<div class="mb-3">
 					<label for="email">이메일 <span class="text-muted">(@ 포함하여 적어주세요)</span></label>
-					<input type="email" class="form-control" id="email" placeholder="ex)you@example.com" autocomplete="off">
+					<input type="email" name="email" class="form-control" id="email" placeholder="ex)you@example.com" autocomplete="off">
 				</div>
 
 				<div class="row">
@@ -71,6 +71,7 @@
 				<div class="mb-3">
 					<label for="uid">프로필 이미지</label>
 					<div>
+						<input type="hidden" name="profile" value="default.jpg">
 						<input type="file" name="profile" value= "profile" class="form-control" placeholder="프로필 이미지 등록">
 					</div>
 				</div>
@@ -92,20 +93,20 @@
 <jsp:include page="/include/footer.jsp"/>
 <jsp:include page="/include/lib_footer.jsp"/>
 <script>
-var pwd1 = $('#pwd1');
-var pwd2 = $('#pwd2');
-var msg = $('#pwd-msg');
-var txt = "";
-
-$('input[type=password]').on('change',function(){
-	if(pwd1.val() == pwd2.val()) {
-		txt = "비밀번호가 일치합니다.";
-		$('#pwd-msg').removeClass('not').addClass('pass').text(txt);
-	} else {
-		txt = "비밀번호가 다릅니다";	
-		$('#pwd-msg').removeClass('pass').addClass('not').text(txt);
-	} 
-});
+	var pwd1 = $('#pwd1');
+	var pwd2 = $('#pwd2');
+	var msg = $('#pwd-msg');
+	var txt = '';
+	
+	$('input[type=password]').on('change',function(){
+		if(pwd1.val() == pwd2.val()) {
+			txt = "비밀번호가 일치합니다.";
+			$('#pwd-msg').removeClass('not').addClass('pass').text(txt);
+		} else {
+			txt = "비밀번호가 다릅니다";	
+			$('#pwd-msg').removeClass('pass').addClass('not').text(txt);
+		} 
+	});
 </script>
 </body>
 </html>

@@ -23,6 +23,7 @@ public class MemberController {
 	@Inject
 	MemberService service;
 
+	//회원가입
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String registerGET() {
 		logger.info("regist get ...........");
@@ -38,6 +39,7 @@ public class MemberController {
 		return "redirect:/member/success";
 	}
 	
+	//회원가입완료
 	@RequestMapping(value = "/success", method = RequestMethod.GET)
 	public String success(MemberVo vo) throws Exception {
 		logger.info("success get ...........");
@@ -45,7 +47,8 @@ public class MemberController {
 
 		return "/member/success";
 	}
-
+	
+	//회원 로그인
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginGET() throws Exception {
 		logger.info("login get ...........");
@@ -73,12 +76,14 @@ public class MemberController {
 		return "redirect:/";
 	}
 
+	//로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) throws Exception {
 		session.removeAttribute("member");
 		return "redirect:/";
 	}
 
+	//회원정보 수정
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public String modifyGET() throws Exception {
 		logger.info("modify get ...........");
@@ -95,6 +100,7 @@ public class MemberController {
 		return "redirect:/";
 	}
 
+	//회원탈퇴
 	@RequestMapping(value = "/withdrawal", method = RequestMethod.GET)
 	public String withdrawal(HttpSession session, MemberVo vo, RedirectAttributes rttr) throws Exception {
 		logger.info(vo.toString());

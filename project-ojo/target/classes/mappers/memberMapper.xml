@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="login" resultType="kr.mycom.ojo.model.MemberVo">
 		select
-			uid, pwd, name, phone, gender, profile,email
+			ucode, uid, pwd, name, phone, gender, regdate, profile, email
 		from
 			members
 		where

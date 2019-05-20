@@ -11,6 +11,7 @@ public class GroupVo {
 	private String regdate;
 	private String content;
 	private String title;
+	
 	public Integer getGcode() {
 		return gcode;
 	}

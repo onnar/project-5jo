@@ -18,8 +18,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<insert id="insert">
-		insert into group_info (ucode,rcode,cnt,cate,regdate,content,title)
-		values(#{ucode},#{rcode}, #{cnt}, #{cate}, #{regdate}, #{content}, #{title})
+		insert into group_info (ucode,rcode,cnt,cate,content,title)
+		values(#{ucode},#{rcode}, #{cnt}, #{cate}, #{content}, #{title})
 	</insert>	
 
 	<select id="listAll" resultType="kr.mycom.ojo.model.GroupVo">
@@ -34,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<update id="update">
-		update group_info set cnt =#{cnt}, cate =#{cate}, regdate =#{regdate}, content =#{content}, title =#{title}
+		update group_info set cnt =#{cnt}, cate =#{cate}, content =#{content}, title =#{title}
 		where gcode = #{gcode}
 	</update>
 	

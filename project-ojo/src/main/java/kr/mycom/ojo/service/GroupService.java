@@ -10,8 +10,7 @@ public interface GroupService {
 	public void modify(GroupVo vo) throws Exception;
 	public void remove(int gcode) throws Exception;
 	
-	public List<GroupVo> listAll() throws Exception; 
-	public List<GroupVo> listPage(int page)throws Exception;
-															 
+	public List<GroupVo> listAll() throws Exception;
+	public List<GroupVo> listPage(int page)throws Exception; 
 	
 }
